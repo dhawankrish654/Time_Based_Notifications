@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block name%}{{ user.username }}{% endblock %}
+{% block side %}
+
+{% if user.is_authenticated %}
+
+
+      <p>{{ user.first_name }}'s DASHBOARD</p>
+      <p>{{ user.username }}'s is my adp id</p>
+
+
+<li><a href="{% url 'logout' %}" class="w3-bar-item w3-button"">LOGOUT</a></li>
+
+<li><a href="{% url 'password_reset' %}"class="w3-bar-item w3-button">RESET PASWORD</a></li>
+<li><a href="notify"class="w3-bar-item w3-button">VIEW NOTIFICATION</a></li>
+<li><a href="#"class="w3-bar-item w3-button">ADD PRODUCT</a></li>
+<li><a href="#"class="w3-bar-item w3-button">ADD ADP</a></li>
+<li><a href="#"class="w3-bar-item w3-button">VIEW PROGRESS</a></li>
+<li><a href="#"class="w3-bar-item w3-button">VIEW GROUPS</a></li>
+<li><a href="#"class="w3-bar-item w3-button">VIEW TREE</a></li>
+
+
+{% else %}
+{% block content %}
+{% endblock %}
+  <p>You are not logged in</p>
+
+  <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+
+{% endif %}
+
+{% endblock %}

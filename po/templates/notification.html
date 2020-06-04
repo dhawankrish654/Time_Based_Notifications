@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+
+{% block title %}NOTIFICATION{% endblock %}
+{% block active %}
+<li class="active"><a href="#">NOTIFICATIN</a></li>
+{% endblock %}
+
+<li><a href="notify">notifications</a></li>
+{% block content %}
+
+<div class="w3-container">
+<div class="jumbotron">
+  <h1>ADMIN NOTIFICATION's ARE</h1>
+  {% for x in z %}
+
+  <p>-  {{x}}</p>
+  {% endfor %}
+
+
+</div>
+</div>
+
+
+
+
+
+
+{% endblock%}
